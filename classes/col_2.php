@@ -26,6 +26,8 @@ class form{
 	public function no_input(){
 		if (isset($_GET['msg'])) {
 			echo "<blockquote class=\"text-success\">Thanks! <br />Your suggestion has been accepted<br /> and added to other suggestions!</blockquote><br />";
+		}elseif (isset($_GET['action']) == sha1("drop")) {
+			echo "<blockquote class=\"text-danger\"><a href='index.php'>Deletion successful! Please click here to confirm.</a></blockquote>";
 		}
 	}
 }

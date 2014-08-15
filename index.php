@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>DOMAIN IDs</title>
-	<link rel="stylesheet" type="text/css" href="css/css.css">
-</head>
-<body>
-	<div class="page-header"><a href = "index.php">Proposed Domain IDs</a></div>
+<?php require_once 'includes/header.inc.php'; ?>
 	<div class="container">
 		<div class="col-1">
 			<?php
@@ -14,7 +7,7 @@
 				$primary_names->return_names();
 			?>
 		</div>
-		<div class="col-1">
+		<div class="col-la">
 			<?php
 				require 'classes/col_2.php';
 				$d_form = new form;
@@ -26,11 +19,8 @@
 			<?php
 				require 'classes/col_3.php';
 				$other_sug = new other_sug;
+				$other_sug->delete_sug();
 			?>
 		</div>
 	</div>
-	<footer>
-		&copy All Right Reserved at my Mummy's kitchen, <?php echo date("Y"); ?>.
-	</footer>>
-</body>
-</html>
+<?php require_once 'includes/footer.inc.php'; ?>
