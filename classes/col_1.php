@@ -13,7 +13,7 @@ class pry_sug{
 	}
 	public function return_names(){
 		foreach ($this->pry as $key => $value) {
-				echo "(" . $key . ") <i>" . $value ."</i><b>". $this->must_extension . "</b><br />";
+				echo "[" . $key . "] <i>" . $value ."</i><b>". $this->must_extension . "</b><br />";
 		}
 	}
 }

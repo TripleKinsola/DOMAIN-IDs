@@ -1,2 +1,2 @@
+<i>thetime</i><b>.com</b>
 <i>myTable</i><b>.com</b>
-<i>theTable</i><b>.com</b>

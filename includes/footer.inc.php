@@ -1,5 +1,5 @@
 	<footer>
-		&copy All Right Reserved at<a href="http://geekerbyte.blogspot.com" target="_blank"> my Mummy's kitchen</a>, <?php echo date("Y"); ?>.
+		&copy All Right Reserved, <?php echo date("Y"); ?>. Powerfully powered at<a href="http://geekerbyte.blogspot.com" target="_blank"> my Mummy's kitchen</a>.
 	</footer>>
 </body>
 </html>

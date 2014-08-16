@@ -19,7 +19,7 @@ class form{
 				fclose($handle);
 				header('Location: index.php?msg=' . sha1('success'));
 			}else{
-				echo "<blockquote class=\"text-danger\">Please input your suggest.</blockquote><br />";
+				echo "<blockquote class=\"text-danger\">Please input your suggestion.</blockquote><br />";
 			}
 		}
 	}
