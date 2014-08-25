@@ -4,7 +4,7 @@
 			<?php
 				require 'classes/col_1.php';
 				$primary_names = new pry_sug;
-				$primary_names->return_names();
+				$primary_names->return_names_param();
 			?>
 		</div>
 		<div class="col-la">

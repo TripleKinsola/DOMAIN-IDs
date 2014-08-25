@@ -15,4 +15,4 @@ Powerfully powered by my Mummy's kitchen!
 	<link rel="shortcut icon" href="graphics/icon.png">
 </head>
 <body>
-	<div class="page-header"><a href = "index.php">Proposed Domain IDs</a></div>
+	<div class="page-header"><a href = "index.php">Domain IDs</a></div>
