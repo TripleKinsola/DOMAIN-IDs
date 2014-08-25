@@ -4,7 +4,7 @@
 */
 class pry_sug{
 	private $must_extension = ".com";//traditionally neccessary
-	private $abbr = "<abbr title='double-click to add your vote'>";
+	private $abbr = "<abbr title='click to make your vote'>";
 	//
 	//prymary suggested propertiy
 	private $pry = array("TurnTables", "NexTable", "TiTable", "NoBoard", "EaseTable", "SeTable", "InTable", "OnTable", "TableCheck", "CatchTable", "Titarray", "Tablarray", "existable", "NexClass", "ClassTab");
@@ -54,7 +54,9 @@ class pry_sug{
 			if (isset($_GET[$value])) {
 				$handle_param = $_GET[$value];
 				$handle = fopen('file/vote/' . $value . ".txt", 'w');
-				fwrite($handle, $handle_param);
+				if (fwrite($handle, $handle_param)) {
+					header('Location: index.php?rep=' . sha1("vote"));
+				}
 				fclose($handle);
 			}
 			/////////

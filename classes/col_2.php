@@ -27,8 +27,10 @@ class form{
 	public function no_input(){
 		if (isset($_GET['msg'])) {
 			echo "<blockquote class=\"text-success\">Thanks! <br />Your suggestion has been accepted<br /> and added to other suggestions!</blockquote><br />";
-		}elseif (isset($_GET['action']) == sha1("drop")) {
-			echo "<blockquote class=\"text-danger\"><a href='index.php'>Successful! Please click here to confirm.</a></blockquote>";
+		}elseif (isset($_GET['action'])) {
+			echo "<blockquote class=\"text-danger\">Deletion successful!</blockquote>";
+		}elseif (isset($_GET['rep']) == sha1("vote")) {
+			echo "<blockquote class=\"text-success\">Success! Your vote counts.</blockquote>";
 		}
 	}
 }

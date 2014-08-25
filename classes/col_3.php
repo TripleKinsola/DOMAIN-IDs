@@ -18,9 +18,10 @@ class other_sug{
 
 	}
 	public function delete_sug(){
-		echo "<a onclick = \"return confirm('$this->drop_msg');\" href = 'index.php?action=" .sha1("drop"). "'>Drop all suggestions</a>";
-		if (isset($_GET['action']) == sha1("drop")) {
+		echo "<a onclick = \"return confirm('$this->drop_msg');\" href = 'index.php?del=" .sha1("drop"). "'>Drop all suggestions</a>";
+		if (isset($_GET['del'])) {
 			unlink("file/file.txt");
+			header('Location: index.php?action=' . sha1("dropin"));
 		}
 	}
 }
