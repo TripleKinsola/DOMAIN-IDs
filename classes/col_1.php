@@ -9,12 +9,19 @@ class pry_sug{
 	//prymary suggested propertiy
 	private $pry = array("TurnTables", "NexTable", "TiTable", "NoBoard", "EaseTable", "SeTable", "InTable", "OnTable", "TableCheck", "CatchTable", "Titarray", "Tablarray", "existable", "NexClass", "ClassTab");
 	///
+	//private $drop_v_param = "<br /><a href = 'index.php?v_drop=dropping' onclick= "\return alart('test');\">Drop all votes!</a>";
 	function __construct(){
 		echo "<b>Primary suggestions</b><blockquote>";
 		$this->create_v_file('file/vote/pry_sug.txt');
 	}
 	public function get_pry_names(){
 		return $this->pry;
+	}
+	private function vote_dropper($value=''){
+		if (isset($_Get['v_drop'])) {
+			header('Location: index.php?vo_drop=' . sha1('v_dropped'));
+		}
+		return "<br /><button><a href = 'index.php?v_drop=dropping'"." onclick= \"return alert('Please, you will need a passphrase to complete that.');\">"."Drop all votes!</a></button>";
 	}
 	private function read_vote($path, $id_name){
 		//reads the voting files and output readable strings
@@ -62,6 +69,7 @@ class pry_sug{
 			/////////
 			echo "<br />";//newline break for each looping
 		}
+		echo $this->vote_dropper();
 	}
 }
 /**
