@@ -28,8 +28,8 @@ class form{
 		$param = "<br /><br /><form action = 'index.php?drop_key' method = 'post'>";
 		$param .= "Here we go ";
 		$param .= "<input type = 'text' name = 'drop_key' placeholder = '...your passphrase'>";
-		$param .= "<input type = 'submit' value = 'Do it!'>"; 
-		$param .= "<button><a href = 'index.php'> Cancel!</a></button>";
+		$param .= "<input type = 'submit' value = 'Do it!'></form>"; 
+		$param .= "<a href = 'index.php'><button> Cancel!</button></a>";
 		return $param;
 	}
 	private function drop_form_alg(){
@@ -37,7 +37,8 @@ class form{
 		if (isset($_POST['drop_key'])) {
 			$d_key = $_POST['drop_key'];
 			if (sha1($d_key) == $k) {
-				if (unlink('file/vote/*.txt')) {
+				$out = array_map('unlink', glob("file/vote/*.txt"));
+				if ($out) {
 					header('Location: index.php?drp=' . sha1('drp'));
 				}
 			}else{

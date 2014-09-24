@@ -21,7 +21,9 @@ class pry_sug{
 		if (isset($_Get['v_drop'])) {
 			header('Location: index.php?vo_drop=' . sha1('v_dropped'));
 		}
-		return "<br /><button><a href = 'index.php?v_drop=dropping'"." onclick= \"return alert('Please, you will need a passphrase to complete that.');\">"."Drop all votes!</a></button>";
+		$output = "<br /><a href = 'index.php'"." onclick= \"return alert('Click on the VOTE link in front of the name of your choice; where the present voted status is shown.');\">"."How can one vote?</a>";
+		$output .= "<br /><a href = 'index.php?v_drop=dropping'"." onclick= \"return alert('Please, you will need a passphrase to complete that.');\"><button>"."Drop all votes!</button></a>";
+		return $output;
 	}
 	private function read_vote($path, $id_name){
 		//reads the voting files and output readable strings
@@ -33,7 +35,7 @@ class pry_sug{
 				$word = "votes";
 			}
 			$add = $value+1;//increament for vote processing
-			return $this->abbr." <a href = 'index.php?".$id_name."=".$add."'><b>".$value."</b> ".$word."</a></abbr> ";
+			return $this->abbr." <a href = 'index.php?".$id_name."=".$add."'><b><span class=\"badge\">".$value."</span></b> ".$word."</a></abbr> ";
 		}
 	}
 	private function create_v_file($path){
@@ -52,7 +54,7 @@ class pry_sug{
 			$this->create_v_file('file/vote/' . $value . ".txt");
 			/////
 			///Output looping of primary array
-			echo "[" . $key . "] <i>" . $value ."</i><b>". $this->must_extension . "</b>  __";
+			echo "[" . $key . "] <i>" . $value ."</i><b>". $this->must_extension . "</b>  ";
 			/////
 			///Vote reader
 			echo $this->read_vote('file/vote/' . $value . ".txt", $value);

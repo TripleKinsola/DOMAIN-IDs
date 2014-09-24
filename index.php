@@ -1,4 +1,6 @@
-<?php require_once 'includes/header.inc.php'; ?>
+<?php 
+ini_set('display_errors', false);
+require_once 'includes/header.inc.php'; ?>
 	<div class="container">
 		<div class="col-1">
 			<?php
