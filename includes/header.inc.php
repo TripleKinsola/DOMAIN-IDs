@@ -6,6 +6,7 @@
 By Akinsola Ademola: geekerbyte.blogspot.com [triplekinsola@gmail.com] 07062671144;
 Powerfully powered by my Mummy's kitchen!
 **/
+ini_set('display_errors', false);
 ?>
 <!DOCTYPE html>
 <html>
